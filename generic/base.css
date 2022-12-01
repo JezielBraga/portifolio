@@ -1,0 +1,40 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: relative;
+    padding: 5px;
+    box-shadow: 0 5px 10px #888;
+}
+
+header h1 {
+    text-align: center;
+}
+
+header .brand {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    background-image: radial-gradient(#999 50%, #000);
+    padding: 0 10px 0 5px;
+    border-radius: 15px;
+}
+
+main {
+    flex: 1;
+    background-color: #e0e0e0;
+}
+
+footer {
+    text-align: center;
+    font-style: oblique;
+    box-shadow: 0 -5px 10px #888;
+}
