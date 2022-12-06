@@ -1,0 +1,39 @@
+#hidden {
+    display: none;
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    width: 250px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #666;
+    margin: 0 auto;
+
+    transition: 300ms;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #999;
+    cursor: pointer;
+}
+
+.card img {
+    padding: 15px;
+    width: 100%;
+}
+
+.card figcaption {
+    line-height: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    background-color: #000;
+}
