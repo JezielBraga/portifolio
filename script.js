@@ -1,4 +1,13 @@
-const root = document.querySelector("#root");
-const cards = document.querySelector("#cards").outerHTML;
+const contents = Array.from(document.querySelectorAll(".contents"));
 
-root.innerHTML = cards
+function showContentSection(sectionId = "cards") {
+    document.querySelector("#" + sectionId).style.display = "flex";
+};
+
+showContentSection();
+
+function hideContentSection(sectionId) {
+    document.querySelector("#" + sectionId).style.display = "none";
+};
+
+//loop forOf
