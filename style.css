@@ -3,8 +3,18 @@
     padding: 5vmin;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .contents {
-    display: none;
+    animation: fadeIn 500ms;
 }
 
 #cards {
@@ -27,7 +37,7 @@
     overflow: hidden;
     box-shadow: 0 0 10px #666;
 
-    transition: 200ms;
+    transition: 100ms;
 }
 
 .card:hover {

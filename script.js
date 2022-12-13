@@ -1,4 +1,14 @@
 const contents = Array.from(document.querySelectorAll(".contents"));
+const cards = Array.from(document.querySelectorAll(".card"));
+const back = document.querySelector("#back");
+
+function hideAllContentSection() {
+    for (const element of contents) {
+        element.style.display = "none";
+    };
+};
+
+hideAllContentSection();
 
 function showContentSection(sectionId = "cards") {
     document.querySelector("#" + sectionId).style.display = "flex";
@@ -6,8 +16,25 @@ function showContentSection(sectionId = "cards") {
 
 showContentSection();
 
-function hideContentSection(sectionId) {
-    document.querySelector("#" + sectionId).style.display = "none";
+function toggleBackButtonDisplay() {
+    if (document.querySelector("#cards").style.display == "flex")
+        back.style.display = "none";
+    else
+        back.style.display = "inline-block";
 };
 
-//loop forOf
+toggleBackButtonDisplay();
+
+for (const element of cards) {
+    element.addEventListener("click", () => {
+        hideAllContentSection();
+        showContentSection(element.id + "-dst");
+        toggleBackButtonDisplay();
+    });
+};
+
+back.addEventListener("click", () => {
+    hideAllContentSection();
+    showContentSection();
+    toggleBackButtonDisplay();
+});
