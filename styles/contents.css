@@ -60,3 +60,23 @@
 }
 
 /* CONTAS */
+#contas-dst {
+    flex: 1;
+    display: flex;
+}
+
+#contas-dst form {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #888;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+#contas-dst form div {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}

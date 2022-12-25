@@ -34,7 +34,31 @@
 
         <!-- ********* CONTAS ********** -->
         <section id="contas-dst" class="contents">
-            <h2>Aqui vao as contas</h2>
+            <form action="">
+                <div>
+                    <label for="desc">Descrição: </label>
+                    <input type="text" name="" id="desc">
+                </div>
+
+                <div>
+                    <label for="valor">Valor:</label>
+                    <input type="number" name="" id="valor">
+                </div>
+
+                <div id="finalidade">
+                    <div>
+                        <label for="entrada">Entrada:</label>
+                        <input type="radio" name="finalidade" id="entrada">
+                    </div>
+
+                    <div>
+                        <label for="saida">Saída:</label>
+                        <input type="radio" name="finalidade" id="saida">
+                    </div>
+                </div>
+
+                <button>Adicionar</button>
+            </form>
         </section>
 
         <!-- ********** ********** -->

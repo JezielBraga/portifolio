@@ -10,7 +10,7 @@ function hideAllContentSection() {
 
 hideAllContentSection();
 
-function showContentSection(sectionId = "cards") {
+function showContentSection(sectionId = /* "cards" */ "contas-dst") {
     document.querySelector("#" + sectionId).style.display = "flex";
 };
 
