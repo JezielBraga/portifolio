@@ -62,21 +62,44 @@
 /* CONTAS */
 #contas-dst {
     flex: 1;
-    display: flex;
-}
-
-#contas-dst form {
-    height: max-content;
-    width: 100%;
-    display: flex;
     flex-direction: column;
-    background-color: #888;
-    padding: 1rem;
-    margin-top: auto;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
 }
 
-#contas-dst form div {
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0;
+#contas-dst section {
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#entradas {
+    background-color: blue;
+}
+
+#totais {
+    background-color: #000;
+}
+
+.input-field,
+p,
+#calc {
+    margin: 10px 0;
+}
+
+input {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+}
+
+#contas-dst button {
+    color: blue;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
 }

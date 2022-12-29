@@ -34,31 +34,34 @@
 
         <!-- ********* CONTAS ********** -->
         <section id="contas-dst" class="contents">
-            <form action="">
-                <div>
-                    <label for="desc">Descrição: </label>
-                    <input type="text" name="" id="desc">
+            <section id="entradas">
+                <div class="input-field">
+                    <label for="divida">Valor da dívida: </label>
+                    <input type="number" name="" id="divida" step=".01">
                 </div>
 
-                <div>
-                    <label for="valor">Valor:</label>
-                    <input type="number" name="" id="valor">
+                <div class="input-field">
+                    <label for="renda-1">Informe a Renda 1: </label>
+                    <input type="number" name="" id="renda-1" step=".01">
                 </div>
 
-                <div id="finalidade">
-                    <div>
-                        <label for="entrada">Entrada:</label>
-                        <input type="radio" name="finalidade" id="entrada">
-                    </div>
-
-                    <div>
-                        <label for="saida">Saída:</label>
-                        <input type="radio" name="finalidade" id="saida">
-                    </div>
+                <div class="input-field">
+                    <label for="renda-2">Informe a Renda 2: </label>
+                    <input type="number" name="" id="renda-2" step=".01">
                 </div>
 
-                <button>Adicionar</button>
-            </form>
+                <button id="calc">Calcular</button>
+            </section>
+
+            <section id="totais">
+                <p>
+                    Renda 1 deve contribuir com: <span id="cont-rend-1"></span>
+                </p>
+
+                <p>
+                    Renda 2 deve contribuir com: <span id="cont-rend-2"></span>
+                </p>
+            </section>
         </section>
 
         <!-- ********** ********** -->
@@ -70,6 +73,7 @@
     <footer></footer>
 
     <script src="scripts/navigation.js"></script>
+    <script src="scripts/contas.js"></script>
 </body>
 
 </html>
