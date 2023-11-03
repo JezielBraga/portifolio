@@ -1,0 +1,16 @@
+@import "reset.css";
+@import "layout.css";
+@import "generic.css";
+@import "contents.css";
+
+header {
+    display: flex;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    padding: 10px;
+}

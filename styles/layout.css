@@ -1,0 +1,26 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 5vh;
+    position: relative;
+    box-shadow: 0 5px 10px #888;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    background-color: #e9e9e9;
+}
+
+footer {
+    height: 3vh;
+    box-shadow: 0 -5px 10px #888;
+}

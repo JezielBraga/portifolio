@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button {
+    height: max-content;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    margin: auto 10px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}

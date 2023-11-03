@@ -1,0 +1,35 @@
+#home {
+    flex: 1;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 180px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0006;
+    margin: auto;
+}
+
+.card img {
+    margin: auto;
+}
+
+.card figcaption {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px #0005;
+    cursor: pointer;
+    z-index: 1;
+}
