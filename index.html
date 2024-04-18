@@ -26,7 +26,37 @@
 
         <!-- ********* CALCULADORA DRIVER CONTENT ********** -->
         <section id="calcDriver" class="content">
-            <span>Calculadora para Motoristas</span>
+            <div class="field">
+                <label for="fatur">Faturamento:</label>
+                <input type="text" class="money" id="fatur">
+            </div>
+
+            <div class="field">
+                <label for="totalKm">Quilômetros Rodados:</label>
+                <input type="text" class="" id="totalKm">
+            </div>
+
+            <div class="field">
+                <label for="custoManut">Custo de Manutenção por Km:</label>
+                <input type="text" class="money" id="custoManut">
+            </div>
+
+            <div class="field">
+                <label for="mediaCons">Média de Consumo de Combustível:</label>
+                <input type="text" class="" id="mediaCons">
+            </div>
+
+            <div class="field">
+                <label for="custoCombus">Custo de Combustível por Litro:</label>
+                <input type="text" class="" id="custoCombus">
+            </div>
+
+            <button id="calcButton">Calcular</button>
+
+            <div class="field result">
+                <label for="result">Ganho líquido atual:</label>
+                <input type="text" class="money" id="result" readonly>
+            </div>
         </section>
     </main>
 
@@ -36,6 +66,7 @@
 
     <script src="scripts/base.js"></script>
     <script src="scripts/navigation.js"></script>
+    <script src="scripts/calcDriver.js"></script>
 </body>
 
 </html>
