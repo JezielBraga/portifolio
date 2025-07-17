@@ -1,41 +1,45 @@
-function getValues() {
-    return [
-        document.querySelector("#fatur").value,
-        document.querySelector("#totalKm").value,
-        document.querySelector("#custoManut").value,
-        document.querySelector("#mediaCons").value,
-        document.querySelector("#custoCombus").value,
-    ]
-}
-
 function toNumber(value) {
     return parseFloat(value.replace(",", "."));
 };
 
+function getValues() {
+    return [
+        toNumber(document.querySelector("#fatur").value),
+        toNumber(document.querySelector("#totalKm").value),
+        toNumber(document.querySelector("#custoManut").value),
+        toNumber(document.querySelector("#mediaCons").value),
+        toNumber(document.querySelector("#custoCombus").value),
+    ]
+}
+
+document.querySelector("#fatur").addEventListener("focus", function () {
+    this.select();
+});
+
+document.querySelector("#fatur").addEventListener("blur", function () {
+    const string = this.value.replaceAll(",", ".");
+    const values = string.split(" ");
+    const total = values.reduce((soma, valor) =>
+        soma += isNaN(parseFloat(valor)) ? 0 : parseFloat(valor), 0)
+        .toLocaleString("pt-BR", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    this.value = total;
+});
+
 function calc() {
-    let [
-        fatur,
-        totalKm,
-        custoManut,
-        mediaCons,
-        custoCombus
-    ] = getValues();
+    const [fatur, totalKm, custoManut, mediaCons, custoCombus] = getValues();
 
     const custoTotalManut =
-        toNumber(totalKm)
-        *
-        toNumber(custoManut);
+        totalKm * custoManut;
 
     const custoTotalCombus =
-        toNumber(totalKm)
-        /
-        toNumber(mediaCons)
-        *
-        toNumber(custoCombus);
+        totalKm / mediaCons * custoCombus;
 
-    toNumber(fatur) - custoTotalManut - custoTotalCombus
+    fatur - custoTotalManut - custoTotalCombus
         ? document.querySelector("#result").value =
-        (toNumber(fatur) - custoTotalManut - custoTotalCombus)
+        (fatur - custoTotalManut - custoTotalCombus)
             .toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
         : alert("Impossível Calcular!");
 };
