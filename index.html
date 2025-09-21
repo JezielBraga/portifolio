@@ -26,37 +26,67 @@
 
         <!-- ********* CALCULADORA DRIVER CONTENT ********** -->
         <section id="calcDriver" class="content">
-            <div class="field">
-                <label for="fatur">Faturamento:</label>
-                <input type="text" class="money" id="fatur">
-            </div>
-
-            <div class="field">
-                <label for="totalKm">Quilômetros Rodados:</label>
-                <input type="text" class="" id="totalKm">
-            </div>
-
-            <div class="field">
-                <label for="custoManut">Custo de Manutenção por Km:</label>
-                <input type="text" class="money" id="custoManut">
-            </div>
-
-            <div class="field">
-                <label for="mediaCons">Média de Consumo de Combustível:</label>
-                <input type="text" class="" id="mediaCons">
-            </div>
-
-            <div class="field">
-                <label for="custoCombus">Custo de Combustível por Litro:</label>
-                <input type="text" class="" id="custoCombus">
-            </div>
-
+            <section class="group in">
+                <div class="input-field">
+                    <label for="fatur">Ganhos:</label>
+                    <input type="text" class="money" id="fatur">
+                </div>
+                <div class="input-field">
+                    <label for="totalKm">Quilômetros Rodados:</label>
+                    <input type="text" class="" id="totalKm">
+                </div>
+                <div class="input-field">
+                    <label for="custoManut">Custo de Manutenção Operacional (R$/Km):</label>
+                    <input type="text" class="money" id="custoManut">
+                </div>
+                <div class="input-field">
+                    <label for="">Custo de Manutenção Fixa (R$/Dia):</label>
+                    <input type="text" class="money" id="">
+                </div>
+                <div class="input-field">
+                    <label for="mediaCons">Média de Consumo de Combustível:</label>
+                    <input type="text" class="" id="mediaCons">
+                </div>
+                <div class="input-field">
+                    <label for="custoCombus">Custo de Combustível por Litro:</label>
+                    <input type="text" class="" id="custoCombus">
+                </div>
+            </section>
             <button id="calcButton">Calcular</button>
-
-            <div class="field result">
+            <!-- <div class="input-field">
                 <label for="result">Ganho líquido atual:</label>
                 <input type="text" class="money" id="result" readonly>
-            </div>
+            </div> -->
+            <section class="group out">
+                <div class="line">
+                    <div class="result">
+                        <span class="title">Total Bruto</span>
+                        <span class="value">R$ 200,00</span>
+                    </div>
+                    <div class="result">
+                        <span class="title">Km Total</span>
+                        <span class="value">115,3</span>
+                    </div>
+                    <div class="result">
+                        <span class="title">Litros Consumidos</span>
+                        <span class="value">14.7</span>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="result">
+                        <span class="title">Custo Combustivel</span>
+                        <span class="value">R$ 63,00</span>
+                    </div>
+                    <div class="result">
+                        <span class="title">Custo Manutenção</span>
+                        <span class="value">R$ 15,00</span>
+                    </div>
+                    <div class="result">
+                        <span class="title">Total Líquido</span>
+                        <span class="value">R$ 0,00</span>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
 
