@@ -28,20 +28,16 @@
         <section id="calcDriver" class="content">
             <section class="group in">
                 <div class="input-field">
-                    <label for="fatur">Ganhos:</label>
-                    <input type="text" class="money" id="fatur">
+                    <label for="ganhos">Ganhos: (R$)</label>
+                    <input type="text" class="money" id="ganhos">
                 </div>
                 <div class="input-field">
                     <label for="totalKm">Quilômetros Rodados:</label>
                     <input type="text" class="" id="totalKm">
                 </div>
                 <div class="input-field">
-                    <label for="custoManut">Custo de Manutenção Operacional (R$/Km):</label>
-                    <input type="text" class="money" id="custoManut">
-                </div>
-                <div class="input-field">
-                    <label for="">Custo de Manutenção Fixa (R$/Dia):</label>
-                    <input type="text" class="money" id="">
+                    <label for="custManutKm">Custo de Manutenção Operacional (R$/Km):</label>
+                    <input type="text" class="money" id="custManutKm">
                 </div>
                 <div class="input-field">
                     <label for="mediaCons">Média de Consumo de Combustível:</label>
@@ -49,23 +45,27 @@
                 </div>
                 <div class="input-field">
                     <label for="custoCombus">Custo de Combustível por Litro:</label>
-                    <input type="text" class="" id="custoCombus">
+                    <input type="text" class="money" id="custoCombus">
+                </div>
+                <div class="input-field">
+                    <label for="custManutDia">Custo de Manutenção Fixa (R$/Dia):</label>
+                    <input type="text" class="money" id="custManutDia">
+                </div>
+                <div class="input-field">
+                    <label for="custExtras">Custos Adicionais:</label>
+                    <input type="text" class="money" id="custExtras">
                 </div>
             </section>
             <button id="calcButton">Calcular</button>
-            <!-- <div class="input-field">
-                <label for="result">Ganho líquido atual:</label>
-                <input type="text" class="money" id="result" readonly>
-            </div> -->
             <section class="group out">
                 <div class="line">
                     <div class="result">
                         <span class="title">Total Bruto</span>
-                        <span class="value">R$ 200,00</span>
+                        <span class="value" id="totalBruto">R$ 0,00</span>
                     </div>
                     <div class="result">
                         <span class="title">Km Total</span>
-                        <span class="value">115,3</span>
+                        <span class="value">0.0 Km</span>
                     </div>
                     <div class="result">
                         <span class="title">Litros Consumidos</span>
