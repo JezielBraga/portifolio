@@ -16,12 +16,47 @@
 }
 
 .input-field {
+    position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 0.25rem;
     border-radius: 0.25rem;
     box-shadow: 0 1px 5px #0006;
+
+    .ganhos-ul {
+        display: flex;
+        justify-content: center;
+        gap: 0.25rem;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+
+    span {
+        margin: 0 auto;
+    }
+
+    .ganho-li {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        padding: 0 0.25rem;
+        background-color: #ccc;
+        border-radius: 0.25rem;
+    }
+
+    .button-li {
+        font-size: 0.5rem;
+        font-weight: bolder;
+        background-color: #fff;
+        border-radius: 50%;
+        margin: 0;
+        align-self: center;
+    }
 
     label {
         text-align: center;
@@ -35,7 +70,24 @@
     }
 }
 
-#calcDriver button {
+.add-input {
+    display: none;
+    color: #fff;
+    background-color: #000;
+    border-radius: 0.25rem;
+    margin: 0 auto;
+
+    span {
+        margin-left: 0.5rem;
+    }
+
+    button {
+        color: #fff;
+        border: none;
+    }
+}
+
+.calc-button {
     color: #fff;
     background-color: #000;
     border-radius: 0.25rem;

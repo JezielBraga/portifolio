@@ -27,9 +27,14 @@
         <!-- ********* CALCULADORA DRIVER CONTENT ********** -->
         <section id="calcDriver" class="content">
             <section class="group in">
-                <div class="input-field">
-                    <label for="ganhos">Ganhos: (R$)</label>
-                    <input type="text" class="money" id="ganhos">
+                <div id="ganhos" class="input-field">
+                    <span>Ganhos (R$):</span>
+                    <ul id="listGanhos" class="ganhos-ul">
+                        <span>R$ 0,00</span>
+                    </ul>
+                </div>
+                <div id="addInput" class="add-input">
+                    <span>R$ </span><input id="ganho" type="text"><button id="addButton">Adicionar</button>
                 </div>
                 <div class="input-field">
                     <label for="totalKm">Quilômetros Rodados:</label>
@@ -56,12 +61,12 @@
                     <input type="text" class="money" id="custExtras">
                 </div>
             </section>
-            <button id="calcButton">Calcular</button>
+            <button id="calcButton" class="calc-button">Calcular</button>
             <section class="group out">
                 <div class="line">
                     <div class="result">
                         <span class="title">Total Bruto</span>
-                        <span class="value" id="totalBruto">R$ 0,00</span>
+                        <span id="totalBruto" class="value">R$ 0,00</span>
                     </div>
                     <div class="result">
                         <span class="title">Km Total</span>
