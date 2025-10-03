@@ -67,44 +67,49 @@ function saveValue() {
 
 document.querySelector("#addButton").onclick = saveValue;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function getValues() {
     return [
-        toNumber(document.querySelector("#totalKm").value),
-        toNumber(document.querySelector("#custoManut").value),
+        toNumber(document.querySelector("#km").value),
+        toNumber(document.querySelector("#custoManutKm").value),
         toNumber(document.querySelector("#mediaCons").value),
         toNumber(document.querySelector("#custoCombus").value),
+        toNumber(document.querySelector("#custoManutDia").value),
     ]
 };
 
 function calc() {
-    //const [ganhos, totalKm, custoManut, mediaCons, custoCombus] = getValues();
-
-    const total = listGanhos.reduce((soma, valor) =>
+    const totalBruto = listGanhos.reduce((soma, valor) =>
         soma += valor, 0);
 
-    document.querySelector("#totalBruto").textContent = "R$ " + total.toFixed(2).replace(".", ",");
+    const [
+        km,
+        custoManutKm,
+        mediaCons,
+        custoCombus,
+        custoManutDia,
+    ] = getValues();
+
+    document.querySelector("#totalBruto").textContent =
+        `R$ ${totalBruto.toFixed(2).replace(".", ",")}`;
+
+    document.querySelector("#totalKm").textContent =
+        `${document.querySelector("#km").value}Km`;
+
+    const totalCustoManut = km * custoManutKm + custoManutDia;
+    document.querySelector("#totalCustoManut").textContent =
+        `R$ ${totalCustoManut.toFixed(2).replace(".", ",")}`;
+
+    const litrosCons = km / mediaCons;
+    document.querySelector("#litrosCons").textContent =
+        `${litrosCons.toFixed(1).replace(".", ",")}L`;
+
+    const totalCustoCombus = litrosCons * custoCombus;
+    document.querySelector("#totalCustoCombus").textContent =
+        `R$ ${totalCustoCombus.toFixed(2).replace(".", ",")}`;
+
+    document.querySelector("#totalLiq").textContent =
+        `R$ ${(totalBruto - totalCustoManut - totalCustoCombus)
+            .toFixed(2).replace(".", ",")}`;
 };
 
 document.querySelector("#calcButton")

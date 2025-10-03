@@ -37,12 +37,16 @@
                     <span>R$ </span><input id="ganho" type="text"><button id="addButton">Adicionar</button>
                 </div>
                 <div class="input-field">
-                    <label for="totalKm">Quilômetros Rodados:</label>
-                    <input type="text" class="" id="totalKm">
+                    <label for="km">Quilômetros Rodados:</label>
+                    <input type="text" id="km">
                 </div>
                 <div class="input-field">
-                    <label for="custManutKm">Custo de Manutenção Operacional (R$/Km):</label>
-                    <input type="text" class="money" id="custManutKm">
+                    <label for="custoManutKm">Custo de Manutenção Operacional (R$/Km):</label>
+                    <input type="text" class="money" id="custoManutKm">
+                </div>
+                <div class="input-field">
+                    <label for="custoManutDia">Custo de Manutenção Fixa (R$/Dia):</label>
+                    <input type="text" class="money" id="custoManutDia">
                 </div>
                 <div class="input-field">
                     <label for="mediaCons">Média de Consumo de Combustível:</label>
@@ -52,43 +56,35 @@
                     <label for="custoCombus">Custo de Combustível por Litro:</label>
                     <input type="text" class="money" id="custoCombus">
                 </div>
-                <div class="input-field">
-                    <label for="custManutDia">Custo de Manutenção Fixa (R$/Dia):</label>
-                    <input type="text" class="money" id="custManutDia">
-                </div>
-                <div class="input-field">
-                    <label for="custExtras">Custos Adicionais:</label>
-                    <input type="text" class="money" id="custExtras">
-                </div>
             </section>
             <button id="calcButton" class="calc-button">Calcular</button>
             <section class="group out">
                 <div class="line">
                     <div class="result">
                         <span class="title">Total Bruto</span>
-                        <span id="totalBruto" class="value">R$ 0,00</span>
+                        <span id="totalBruto">R$ 0,00</span>
                     </div>
                     <div class="result">
                         <span class="title">Km Total</span>
-                        <span class="value">0.0 Km</span>
+                        <span id="totalKm">0.0 Km</span>
                     </div>
                     <div class="result">
-                        <span class="title">Litros Consumidos</span>
-                        <span class="value">14.7</span>
+                        <span class="title">Custo Manutenção</span>
+                        <span id="totalCustoManut">R$ 0,00</span>
                     </div>
                 </div>
                 <div class="line">
                     <div class="result">
-                        <span class="title">Custo Combustivel</span>
-                        <span class="value">R$ 63,00</span>
+                        <span class="title">Litros Consumidos</span>
+                        <span id="litrosCons">0,0L</span>
                     </div>
                     <div class="result">
-                        <span class="title">Custo Manutenção</span>
-                        <span class="value">R$ 15,00</span>
+                        <span class="title">Custo Combustivel</span>
+                        <span id="totalCustoCombus">R$ 0,00</span>
                     </div>
                     <div class="result">
                         <span class="title">Total Líquido</span>
-                        <span class="value">R$ 0,00</span>
+                        <span id="totalLiq">R$ 0,00</span>
                     </div>
                 </div>
             </section>
