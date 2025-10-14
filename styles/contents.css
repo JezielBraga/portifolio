@@ -12,6 +12,7 @@
 }
 
 .content {
-    max-width: 1366px;
+    max-width: 1024px;
+    margin: 0 auto;
     animation: fadeIn 500ms;
 }

@@ -33,7 +33,7 @@ function updateList() {
             span.onclick = showInput;
             span.textContent = "R$ 0,00";
             document.querySelector("#listGanhos").replaceChildren(span);
-        })()
+        })();
 };
 
 function createLi(value, index) {
