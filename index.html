@@ -34,27 +34,28 @@
                     </ul>
                 </div>
                 <div id="addInput" class="add-input">
-                    <span>R$ </span><input id="ganho" type="text"><button id="addButton">Adicionar</button>
+                    <input id="ganho" class="money" type="text" inputmode="numeric" value="R$ 0,00">
+                    <button id="addButton">Adicionar</button>
                 </div>
                 <div class="input-field">
                     <label for="km">Quilômetros Rodados:</label>
-                    <input type="text" id="km">
+                    <input id="km" type="text" inputmode="numeric">
                 </div>
                 <div class="input-field">
                     <label for="custoManutKm">Manutenção por Quilômetro: (R$/Km)</label>
-                    <input type="text" class="money" id="custoManutKm">
+                    <input id="custoManutKm" class="money" type="text" inputmode="numeric" value="R$ 0,00">
                 </div>
                 <div class="input-field">
                     <label for="custoManutDia">Manutenção por Dia: (R$/Dia)</label>
-                    <input type="text" class="money" id="custoManutDia">
+                    <input id="custoManutDia" class="money" type="text" inputmode="numeric" value="R$ 0,00">
                 </div>
                 <div class="input-field">
                     <label for="mediaCons">Média de Consumo: (Km/L)</label>
-                    <input type="text" class="" id="mediaCons">
+                    <input id="mediaCons" class="" type="text" inputmode="numeric">
                 </div>
                 <div class="input-field">
                     <label for="custoCombus">Custo de Combustível: (R$/L)</label>
-                    <input type="text" class="money" id="custoCombus">
+                    <input id="custoCombus" class="money" type="text" inputmode="numeric" value="R$ 0,00">
                 </div>
             </section>
             <button id="calcButton" class="calc-button">Calcular</button>

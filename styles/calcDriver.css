@@ -74,11 +74,12 @@
     display: none;
     color: #fff;
     background-color: #000;
+    padding-left: 0.25rem;
     border-radius: 0.25rem;
     margin: 0 auto;
 
-    span {
-        margin-left: 0.5rem;
+    input {
+        outline: none;
     }
 
     button {
