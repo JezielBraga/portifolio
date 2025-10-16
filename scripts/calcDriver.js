@@ -1,9 +1,9 @@
 //POSICAO DO CURSOR
-function toEnd(elem) {
-    const end = elem.value.length;
+function toEnd(input) {
+    const end = input.value.length;
 
     setTimeout(() => {
-        elem.setSelectionRange(end, end);
+        input.setSelectionRange(end, end);
     }, 0);
 };
 
@@ -12,23 +12,11 @@ document.querySelectorAll(".money").forEach((input) => {
 });
 
 //FORMATACAO
-function toBRL(value = 0) {
-    if (typeof (value) === "number")
-        return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
-    else {
-        let currentValue = value.replace(".", "");
-
-        if (currentValue.length > 5)
-            currentValue = `${currentValue.slice(0, -5)}.${currentValue.slice(-5)}`;
-
-        if (currentValue.length > 9)
-            currentValue = `${currentValue.slice(0, -9)}.${currentValue.slice(-9)}`;
-
-        return `R$ ${currentValue.slice(0, -2)},${currentValue.slice(-2)}`;
-    };
+function toBRL(number = 0) {
+    return number.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 };
 
-//MASCARA E LIMITACAO DE ENTRADA
+//MASCARA E AJUSTE DE ENTRADA
 function mascara(input) {
     let currentValue = input.value;
 
@@ -43,7 +31,9 @@ function mascara(input) {
     if (currentValue.length > 3 && currentValue[0] === "0")
         currentValue = currentValue.slice(1);
 
-    input.value = toBRL(currentValue);
+    let number = parseFloat(`${currentValue.slice(0, -2)}.${currentValue.slice(-2)}`);
+
+    input.value = toBRL(number);
 };
 
 document.querySelectorAll(".money").forEach((input) => {
@@ -53,14 +43,15 @@ document.querySelectorAll(".money").forEach((input) => {
 //LISTA DE GANHOS
 const listGanhos = [];
 
-function toNumber(value) {
-    value = value.replaceAll(".", "");
-    value = value.replace(",", ".");
+function toNumber(string) {
+    let toNumber = string
+        .replaceAll(".", "")
+        .replace(",", ".");
 
-    if (isNaN(parseFloat(value)))
-        value = value.slice(3);
+    if (isNaN(parseFloat(toNumber)))
+        toNumber = toNumber.slice(3);
 
-    return parseFloat(value);
+    return parseFloat(toNumber);
 };
 
 function hideInput() {
@@ -133,7 +124,7 @@ function getValues() {
         toNumber(document.querySelector("#mediaCons").value),
         toNumber(document.querySelector("#custoCombus").value),
         toNumber(document.querySelector("#custoManutDia").value),
-    ]
+    ];
 };
 
 function calc() {
@@ -148,20 +139,23 @@ function calc() {
         custoManutDia,
     ] = getValues();
 
-    document.querySelector("#totalBruto").textContent = toBRL(totalBruto);
+    document.querySelector("#totalBruto").textContent =
+        toBRL(totalBruto);
 
     document.querySelector("#totalKm").textContent =
         `${document.querySelector("#km").value}Km`;
 
     const totalCustoManut = km * custoManutKm + custoManutDia;
-    document.querySelector("#totalCustoManut").textContent = toBRL(totalCustoManut);
+    document.querySelector("#totalCustoManut").textContent =
+        toBRL(totalCustoManut);
 
     const litrosCons = km / mediaCons;
     document.querySelector("#litrosCons").textContent =
         `${litrosCons.toFixed(1).replace(".", ",")}L`;
 
     const totalCustoCombus = litrosCons * custoCombus;
-    document.querySelector("#totalCustoCombus").textContent = toBRL(totalCustoCombus);
+    document.querySelector("#totalCustoCombus").textContent =
+        toBRL(totalCustoCombus);
 
     document.querySelector("#totalLiq").textContent =
         toBRL(totalBruto - totalCustoManut - totalCustoCombus);
