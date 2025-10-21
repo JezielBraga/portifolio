@@ -7,7 +7,7 @@ function toEnd(input) {
     }, 0);
 };
 
-document.querySelectorAll(".money").forEach((input) => {
+document.querySelectorAll("input").forEach((input) => {
     input.addEventListener("focus", ({ target }) => toEnd(target));
 });
 
@@ -22,21 +22,41 @@ function mascara(input) {
 
     currentValue = currentValue.replace(/\D/g, "");
 
-    if (currentValue.length > 9)
-        currentValue = currentValue.slice(0, 9);
+    if (input.className === "money") {
+        if (currentValue.length > 9)
+            currentValue = currentValue.slice(0, 9);
 
-    if (currentValue.length < 3)
-        currentValue = "0" + currentValue;
+        if (currentValue.length > 3 && currentValue[0] === "0")
+            currentValue = currentValue.slice(1);
 
-    if (currentValue.length > 3 && currentValue[0] === "0")
-        currentValue = currentValue.slice(1);
+        if (currentValue.length < 3)
+            currentValue = "0" + currentValue;
 
-    let number = parseFloat(`${currentValue.slice(0, -2)}.${currentValue.slice(-2)}`);
+        let number = currentValue.length < 3
+            ? parseFloat(currentValue)
+            : parseFloat(`${currentValue.slice(0, -2)}.${currentValue.slice(-2)}`)
 
-    input.value = toBRL(number);
+        input.value = toBRL(number);
+    };
+
+    if (input.className === "float") {
+        if (currentValue.length > 8)
+            currentValue = currentValue.slice(0, 8);
+
+        if (currentValue.length > 2 && currentValue[0] === "0")
+            currentValue = currentValue.slice(1);
+
+        if (currentValue.length < 2)
+            currentValue = "0" + currentValue;
+
+        currentValue = `${currentValue.slice(0, -1)}.${currentValue.slice(-1)}`;
+
+        input.value = parseFloat(currentValue)
+            .toLocaleString("pt-br", { minimumFractionDigits: "1" });
+    };
 };
 
-document.querySelectorAll(".money").forEach((input) => {
+document.querySelectorAll("input").forEach((input) => {
     input.addEventListener("input", () => mascara(input));
 });
 
