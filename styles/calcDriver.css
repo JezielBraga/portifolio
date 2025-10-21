@@ -80,6 +80,7 @@
 
     input {
         outline: none;
+        background-color: #fff;
     }
 
     button {
